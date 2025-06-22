@@ -1,235 +1,654 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashant Yadav - Portfolio</title>
+    <title>VP Result : Latest Government Jobs, Results & Admit Cards 2025</title>
+    <meta name="description" content="India's No.1 Government Job Portal - Latest Sarkari Naukri, Results, Admit Cards, Answer Keys and Exam Updates">
+    <meta name="keywords" content="government jobs, sarkari result, sarkari naukri, latest jobs, admit card, exam result, answer key, syllabus">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
-        body {
-            background: #1a1a1a;
-            color: white;
-            overflow-x: hidden;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        .navbar h1 {
-            font-size: 1.5rem;
-            color: #00ff88;
-        }
-        .navbar button {
-            background: #00ff88;
-            border: none;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            font-size: 1rem;
-            border-radius: 5px;
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            animation: fadeIn 2s ease-in-out;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            color: #ccc;
-            animation: fadeIn 3s ease-in-out;
-        }
-        .hero img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-top: 2rem;
-            border: 5px solid #00ff88;
-            animation: float 4s ease-in-out infinite;
-        }
-        .section {
-            padding: 4rem 2rem;
-            background: #222;
-            margin: 2rem 0;
-            border-radius: 10px;
-        }
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #00ff88;
-        }
-        .section p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #ccc;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-        .card {
-            background: #333;
-            padding: 1rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .footer {
-            text-align: center;
-            padding: 2rem;
-            background: #111;
-            color: #ccc;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <h1>Prashant Yadav</h1>
-        <button onclick="scrollToSection('about')">About Me</button>
-    </div>
-
-    <!-- Hero Section -->
-    <div class="hero">
-        <div>
-            <h1>Prashant Yadav</h1>
-            <p>Web Developer | Student | Creative Thinker</p>
-            <img src="PRASHANT.jpeg" alt="Prashant Yadav">
+    <!-- Promotional Banner -->
+    <div id="promo-banner">
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="banner-text">
+                    <strong>✨ अब कैफे जाने की कोई जरूरत नहीं! ✨</strong>
+                    <span>बस ₹50 में लाइफटाइम सुविधा - एक बार डॉक्यूमेंट अपलोड करें और सभी फॉर्म एक क्लिक में भरें!</span>
+                    <div class="countdown-timer">
+                        <div class="timer-box">
+                            <span class="timer-number" id="hours">00</span>
+                            <span class="timer-label">Hours</span>
+                        </div>
+                        <div class="timer-separator">:</div>
+                        <div class="timer-box">
+                            <span class="timer-number" id="minutes">00</span>
+                            <span class="timer-label">Minutes</span>
+                        </div>
+                        <div class="timer-separator">:</div>
+                        <div class="timer-box">
+                            <span class="timer-number" id="seconds">00</span>
+                            <span class="timer-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-actions">
+                <a href="add.html" class="banner-btn pulse-animation">
+                    <i class="fas fa-info-circle"></i> More Info
+                </a>
+                <button id="close-banner">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- About Section -->
-    <div id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            Hello! I'm Prashant Yadav, a passionate web developer and student. I love creating beautiful and functional websites.
-            Currently, I'm pursuing my studies in Computer Science and working on various projects to enhance my skills.
-        </p>
-    </div>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="newlogo.jpeg" alt="VP-GLOBAL Logo">
+                <div class="logo-text">
+                    <h1>VP-GLOBAL</h1>
+                    <p>India's No.1 Government Job Portal</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="premium-badge float-animation">
+                    <i class="fas fa-crown"></i> Premium
+                </div>
+                <div class="dark-mode-toggle">
+                    <span>Dark Mode</span>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
 
-    <!-- Education Section -->
-    <div class="section">
-        <h2>Education</h2>
-        <p>
-            - Bachelor of Science in Computer Science (Expected Graduation: 2028)<br>
-            - High School Diploma from XYZ School (2020)
-        </p>
-    </div>
+    <nav>
+        <ul class="navbar" id="navbar">
+            <!-- <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li> -->
+            <li><a href="video.html"><i class="fas fa-briefcase"></i> Latest Jobs</a></li>
+            <li><a href="video.html"><i class="fas fa-poll"></i> Results</a></li>
+            <li><a href="video.html"><i class="fas fa-id-card"></i> Admit Cards</a></li>
+            <li><a href="video.html"><i class="fas fa-key"></i> Answer Keys</a></li>
+            <li><a href="video.html"><i class="fas fa-book"></i> Syllabus</a></li>
+            <li><a href="video.html"><i class="fas fa-search"></i> Search</a></li>
+            <li><a href="video.html"><i class="fas fa-video"></i> Videos</a></li>
+            <li><a href="information.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Skills Section -->
-    <div class="section">
-        <h2>Skills</h2>
-        <div class="grid">
-            <div class="card">HTML</div>
-            <div class="card">CSS</div>
-            <div class="card">JavaScript</div>
-            <div class="card">Three.js</div>
+    <section class="hero">
+        <div class="container">
+            <h2>Latest Government Jobs & Exam Updates 2025</h2>
+            <p>Get instant notifications for all Sarkari Naukri, Results, Admit Cards, Answer Keys and more at one place</p>
+            <!-- <div class="search-box"> 
+                <input type="text" placeholder="Search jobs, exams, results...">
+                <button type="submit"><i class="fas fa-search"></i> Search</button>
+            </div>  -->
+            <h4> CHOOSE THE DESKTOP MODE FOR A BATTER EXPERIENCE</h4>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="quick-stats">
+            <div class="stat-item">
+                <div class="stat-number">25,000+</div>
+                <div class="stat-label">Jobs Available</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1.2M+</div>
+                <div class="stat-label">Users Registered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Exams Covered</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
         </div>
     </div>
 
-    <!-- Projects Section -->
-    <div class="section">
-        <h2>Projects</h2>
-        <div class="grid">
-            <div class="card">E-commerce Website</div>
-            <div class="card">Portfolio Website</div>
-            <div class="card">Open Source Contributions</div>
+    <div class="container marquee-container">
+        <div class="marquee">
+            <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+                <a href="#">UP Police Recruitment 2025 - Apply Online for 25,000 Posts</a> | 
+                <a href="#">SSC CGL 2025 Notification Released - Apply Before 30th June</a> | 
+                <a href="#">IBPS PO XII Online Form Available Now - 4,000 Vacancies</a> | 
+                <a href="#">UPSC Civil Services Prelims Result Declared - Check Now</a> |
+                <a href="#">Railway Group D Phase 3 Admit Card Released</a>
+            </marquee>
         </div>
     </div>
 
-    <!-- Contact Section -->
-    <div class="section">
-        <h2>Contact</h2>
-        <p>Email: prashant@example.com</p>
-        <p>Phone: +91 1234567890</p>
+    <div class="container">
+        <h2 class="section-title">Today's Highlights</h2>
+        <div class="highlights">
+            <div class="highlight-card">
+                <div class="badge">New</div>
+                <h3>UP Board Result 2025</h3>
+                <p>Class 10th & 12th Results Declared Today at 2 PM</p>
+                <a href="#">Check Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="highlight-card">
+                <div class="badge">Urgent</div>
+                <h3>RRB ALP Recruitment</h3>
+                <p>Apply Online for 10,000+ Posts - Last Date Tomorrow</p>
+                <a href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="highlight-card">
+                <h3>NEET UG 2025</h3>
+                <p>Exam City Details Released - Download Now</p>
+                <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="highlight-card">
+                <div class="badge">Latest</div>
+                <h3>Army Agniveer 2025</h3>
+                <p>Online Application Open for 50,000 Posts</p>
+                <a href="#">Apply Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <h2 class="section-title">Latest Updates</h2>
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <i class="fas fa-poll"></i> Latest Results
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="#">MPPKVVCL Various Post Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">UP CNET 2025 Result <span class="date">Today</span></a></li>
+<li><a href="#">Rajasthan Board RBSE Class 10th Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">Jharkhand Board JAC Class 10th Matric Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">UPPSC Assistant Engineer AE 2024 Pre Result <span class="date">Today</span></a></li>
+<li><a href="#">RBI Junior Engineer JE Civil / Electrical Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">UPSC CMS 2024 Reserve List <span class="date">Today</span></a></li>
+<li><a href="#">NTA JIPMAT 2025 Result <span class="date">Today</span></a></li>
+<li><a href="#">UP Madarsa Board Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">NTA JEEMAIN Session II Paper 2 Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">UPSC CDS II 2024 OTA Final Result <span class="date">Today</span></a></li>
+<li><a href="#">NTA AISSEE 2025 Result / Score Card <span class="date">Today</span></a></li>
+<li><a href="#">Rajasthan Board RBSE Class 12th Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">Bihar Board BSEB Class 12th Inter Scrutiny Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">SBI PO Malns Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">JPSC Civil Services 2024 Malns Result <span class="date">Today</span></a></li>
+<li><a href="#">Bihar Board BSEB Class 10th Scrutiny Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">Coast Guard Navik CGEPT 02/2025 Stage I Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">India Post GDS 3rd Merit List / Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">UPSSSC Technical Assistant Group C 2024 Eligibility Result <span class="date">Today</span></a></li>
+<li><a href="#">NTA NCHMJEE 2025 Result <span class="date">Today</span></a></li>
+<li><a href="#">UPSSSC Combined Technical Service 2016 PET PST Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">IDBI Bank Junior Assistant Manager JAM PGDBF Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">Patna High Court Assistant Cashier Final Result 2025 <span class="date">Today</span></a></li>
+<li><a href="#">UPSSSC Nakshanavish and Manchitzak 2023 Eligibility Result <span class="date">Today</span></a></li>
+<li><a href="#">CLAT 2025 Revised Result <span class="date">Today</span></a></li>
+<li><a href="#">HBSE BSEH Class 10th Secondary Result 2025 Declared <span class="date">Today</span></a></li>
+<li><a href="#">NYS Class 6th Winter Bound Result 2025 <span class="date">Today</span></a></li>
+                    </ul>
+                </div>
+                <a href="#" class="view-more">View All Results <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <i class="fas fa-id-card"></i> Admit Cards
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="#">UPCATET 2025 Admit Card <span class="date">Released</span></a></li>
+                        <li><a href="#">UPSC Engineering Services Pre 2025 Admit Card <span class="date">Released</span></a></li>
+                        <li><a href="#">MPESB Group 1 and 2 Sub Group 1 Admit Card 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">UP Polytechnic JEECUP 2025 Admit Card <span class="date">Released</span></a></li>
+                        <li><a href="#">SBI PO Interview Letter 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">RSSB NHM Various Post Exam City Details 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">AAI Non Executives Western Region Admit Card 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">RSSB Stenographer Phase II Exam Date 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">RPSC School Lecturer PGT Teacher Exam Date 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">Railway RRB NTPC Graduate Level Exam City Details 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">UPPSC 2024 Mains Exam Schedule <span class="date">Released</span></a></li>
+                        <li><a href="#">UPBED 2025 Admit Card <span class="date">Released</span></a></li>
+                        <li><a href="#">RRB Junior Engineer Re Schedule Stage II Exam City Details 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">NTA NIFT 2025 Stage II Exam City Details <span class="date">Released</span></a></li>
+                        <li><a href="#">NCRTC Various Post Vacancy Cancelled Notice 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">NTA CUET UG 2025 Admit Card <span class="date">Released</span></a></li>
+                        <li><a href="#">RPSC APO 2024 Mains Admit Card <span class="date">Released</span></a></li>
+                        <li><a href="#">DSSSB Assistant Superintendent, Matron & Warden Admit Card 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">DSSSB Various Post Exam Date June / July 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">GPAT 2025 Admit Card <span class="date">Released</span></a></li>
+                        <li><a href="#">HTET 2024 Exam Date <span class="date">Released</span></a></li>
+                        <li><a href="#">Bihar Vidhan Parishad ASO Admit Card 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">SCI Junior Court Assistant Typing Test Exam City 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">Bihar 2 Year BEd Admit Card 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">Jute Corp JCI Various Post Admit Card 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">UPSSSC Technical Assistant Group C 2024 Mains Exam Date <span class="date">Released</span></a></li>
+                        <li><a href="#">UP CNET 2025 Admit Card <span class="date">Released</span></a></li>
+                        <li><a href="#">Navy SSR / MR Admit Card 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">NVS Non Teaching Various Post Admit Card 2025 <span class="date">Released</span></a></li>
+                       
+                    </ul>
+                </div>
+                <a href="#" class="view-more">View All Admit Cards <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <i class="fas fa-briefcase"></i> Latest Jobs
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="BIHARPOLICE1.HTML">Bihar Police Enforcement Sub Inspector SI Online Form 2025 <span class="date">New</span></a></li>
+                        <li><a href="HSSCCET2.HTML">Haryana HSSC CET Group C Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="HTET.HTML">Haryana HTET Online Form 2025 Re Open<span class="date">New</span></a></li>
+                        <li><a href="cds.html">UPSC CDS II Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="nda.html">UPSC NDA II Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">Rajasthan Police Constable Correction / Edit Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">Rajasthan Police Constable Telecommunication Correction / Edit Form<span class="date">New</span></a></li>
+                        <li><a href="#">Bihar SHS Medical Officer Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">UPESSC Assistant Professor BEd Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">Bihar BPSC Assistant Section Officer ASO Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">Railway RRB Assistant Loco Pilot ALP Correction / Edit Form 2025<span class="date">New</span></a></li>
+                        <!-- <li><a href="#">BSSC Laboratory Assistant Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">South Indian Bank SIB Junior Officer Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">SSC One Time Registration OTR 2025 Aadhar Enabled<span class="date">New</span></a></li>
+                        <li><a href="#">Territorial Army Officer Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">UPSSSC PET 2025 Online Form<span class="date">New</span></a></li>
+                        <li><a href="csir.html">CSIR IITR Junior Stenographer Online Form 2025 <span class="date">New</span></a></li>
+                        <li><a href="pet.html">Army 10+2 TES 54 Online Form <span class="date">15,000+ Posts</span></a></li> -->
+                        <!-- <li><a href="#">MP High Court Class IV Online Form 2025 <span class="date">Closing Soon</span></a></li>
+                        <li><a href="#">UPPSC Various Post Direct Recruitment Online Form 2025 <span class="date">Apply Now</span></a></li>
+                        <li><a href="#">Indian Overseas Bank Local Bank Officer LBO Online Form 2025 <span class="date">50,000 Vacancies</span></a></li>
+                        <li><a href="#">SBI Circle Based Officers CBO Online Form 2025 <span class="date">Just Released</span></a></li>
+                        <li><a href="#">ASRB NET, ARS, SMS, STO Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">CSIR NBRI Lucknow Various Post Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">Army TGC 142 Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#">BPSSC Range Officer of Forest Online Form 2025<span class="date">New</span></a></li>
+                        <li><a href="#"><span class="date">New</span></a></li>
+                        <li><a href="#"><span class="date">New</span></a></li> -->
+                    </ul>
+                </div>
+                <a href="#" class="view-more">View All Jobs <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="content-card">
+                <div class="card-header">
+                    <i class="fas fa-key"></i> Answer Keys
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="#">UPSSSC VDO Answer Key 2025 <span class="date">Released</span></a></li>
+                        <li><a href="#">RRB JE Stage II Answer Key <span class="date">Objection Open</span></a></li>
+                        <li><a href="#">UPPSC AE Pre Answer Key <span class="date">Today</span></a></li>
+                        <li><a href="#">NTA CUET PG 2025 Answer Key <span class="date">Tomorrow</span></a></li>
+                        <li><a href="#">SSC CHSL 2024 Tier 1 Answer Key <span class="date">Final</span></a></li>
+                        <li><a href="#">BPSC 67th Combined Answer Key <span class="date">Revised</span></a></li>
+                    </ul>
+                </div>
+                <a href="#" class="view-more">View All Answer Keys <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <i class="fas fa-book"></i> Syllabus
+                </div>
+                <div class="card-body">
+                    <ul>
+                        
+                        <li><a href="#">UPSSSC JE Civil Syllabus 2024<span class="date">Download</span></a></li>
+                        <li><a href="#">UPSSSC Homeopathic Pharmacist Syllabus 2024<span class="date">Download</span></a></li>
+                        <li><a href="#">NTA JEEMAIN Syllabus 2025<span class="date">Download</span></a></li>
+                        <li><a href="#">UPSC IAS 2025 Complete Syllabus PDF <span class="date">Download</span></a></li>
+                        <li><a href="#">SSC CGL 2025 Syllabus & Exam Pattern <span class="date">New</span></a></li>
+                        <li><a href="#">UPSSSC BCG Technician Syllabus 2024 <span class="date">Updated</span></a></li>
+                        <li><a href="#">NTA NEET UG 2025 Syllabus <span class="date">Latest</span></a></li>
+                        <li><a href="#">UPPSC PCS 2025 Syllabus <span class="date">Revised</span></a></li>
+                        <li><a href="#">UPSSSC Assistant Store Keeper Syllabus 2024 <span class="date">Detailed</span></a></li>
+                    </ul>
+                </div>
+                <a href="#" class="view-more">View All Syllabus <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="content-card">
+                <div class="card-header">
+                    <i class="fas fa-graduation-cap"></i> Admissions
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><a href="#">MPESB PBBsc BSc Nursing and MSc Nursing Online Form 2025<span class="date">Open</span></a></li>
+                        <li><a href="#">MUIT Diploma Admissions Online Form 2025<span class="date">Open</span></a></li>
+                        <li><a href="#">MPESB Nursing Admissions PNST, GNMTST Online Form 2025<span class="date">Open</span></a></li>
+                        <li><a href="#">UPMSP UP Board Compartment Online Form 2025<span class="date">Open</span></a></li>
+                        <li><a href="#">Bihar ITI Admissions Online Form 2025 Extended<span class="date">Open</span></a></li>
+                        <li><a href="#">Allahabad University PGAT Admissions Online Form 2025<span class="date">Open</span></a></li>
+                        <li><a href="#">MPESB ANM Selection Test ANMTST Online Form 2025<span class="date">Open</span></a></li>
+                        <li><a href="#">NTA AIAPGET Online Form 2025<span class="date">Open</span></a></li>
+                        <li><a href="#">UP SCVTUP ITI Admissions Online Form 2025<span class="date">Open</span></a></li>
+                        <li><a href="#">NTA ICAR AIEEA PG and PhD Admissions Online Form 2025<span class="date">Open</span></a></li>
+                    </ul>
+                </div>
+                <a href="#" class="view-more">View All Admissions <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Premium Features Section -->
+        <div class="premium-features">
+            <div class="container">
+                <h2>Unlock Premium Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Instant Alerts</h3>
+                        <p>Get instant notifications for new jobs, results and admit cards directly on your phone</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>One-Click Apply</h3>
+                        <p>Auto-fill application forms with your saved documents in just one click</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Smart Analytics</h3>
+                        <p>Track your application status and get personalized recommendations</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Premium Videos</h3>
+                        <p>Access exclusive preparation videos and expert guidance</p>
+                    </div>
+                </div>
+                <div class="premium-cta">
+                    <a href="#" class="premium-btn pulse-animation">
+                        <i class="fas fa-crown"></i> Upgrade Now for ₹50/month
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        VP-GLOBAL helped me find my dream government job. The instant alerts and one-click apply feature saved me so much time!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">R</div>
+                        <div class="author-info">
+                            <h4>Rahul Sharma</h4>
+                            <p>Selected as IBPS PO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Thanks to VP-GLOBAL's timely notifications, I never missed any important exam dates. The best job portal for serious aspirants!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">P</div>
+                        <div class="author-info">
+                            <h4>Priya Patel</h4>
+                            <p>Cleared SSC CGL</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The premium features are worth every rupee! The auto-fill form feature saved me hours of work and multiple cafe visits.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Villard Yadav</h4>
+                            <p>UP Police</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <h2>About VP-GLOBAL</h2>
+            <p>VP-GLOBAL is India's leading education portal dedicated to providing timely and accurate information about government jobs, exam results, admit cards, and more. Our mission is to help millions of Indian youth in their pursuit of Sarkari Naukri by offering comprehensive resources, preparation materials, and the latest updates.</p>
+            
+            <p>With our user-friendly interface, dark mode feature, and mobile apps, we make it easier than ever to stay updated with all government job opportunities across various sectors including Banking, SSC, Railway, Teaching, Defense, and State Government jobs.</p>
+            
+            <h3>Why Choose VP-GLOBAL?</h3>
+            <ul>
+                <li>Most comprehensive and up-to-date information</li>
+                <li>Instant notifications for important updates</li>
+                <li>One-click application form filling</li>
+                <li>Dark mode for comfortable browsing</li>
+                <li>Video tutorials and preparation guides</li>
+                <li>Mobile apps for Android and iOS</li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2025 Prashant Yadav. All rights reserved.</p>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#"><i class="fab fa-android"></i> Android App</a>
+                    <a href="#"><i class="fab fa-apple"></i> iOS App</a>
+                    <a href="#"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Popular Exams</h3>
+                    <a href="#"><i class="fas fa-graduation-cap"></i> UPSC Civil Services</a>
+                    <a href="#"><i class="fas fa-file-alt"></i> SSC CGL</a>
+                    <a href="#"><i class="fas fa-university"></i> IBPS PO</a>
+                    <a href="#"><i class="fas fa-train"></i> Railway Group D</a>
+                    <a href="#"><i class="fas fa-shield-alt"></i> UP Police</a>
+                    <a href="#"><i class="fas fa-flask"></i> NEET UG</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>State Jobs</h3>
+                    <a href="#"><i class="fas fa-landmark"></i> Uttar Pradesh</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Bihar</a>
+                    <a href="#"><i class="fas fa-city"></i> Madhya Pradesh</a>
+                    <a href="#"><i class="fas fa-fort-awesome"></i> Rajasthan</a>
+                    <a href="#"><i class="fas fa-building"></i> Maharashtra</a>
+                    <a href="#"><i class="fas fa-gopuram"></i> West Bengal</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Help & Support</h3>
+                    <a href="#"><i class="fas fa-phone-alt"></i> Contact Us</a>
+                    <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+                    <a href="#"><i class="fas fa-lock"></i> Privacy Policy</a>
+                    <a href="#"><i class="fas fa-file-contract"></i> Terms & Conditions</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+                    <a href="#"><i class="fas fa-comment-alt"></i> Feedback</a>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 VP-GLOBAL. All Rights Reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> for Indian Job Seekers | MADE BY PRASHANT YADAV</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
     </div>
 
-    <!-- 3D Background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // 3D Background Setup
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        document.body.appendChild(renderer.domElement);
-
-        // Add Particles
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 1000;
-        const posArray = new Float32Array(particlesCount * 3);
-
-        for (let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 10;
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        // Check for saved user preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
         }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.02,
-            color: '#00ff88',
-            transparent: true,
-            opacity: 0.8
-        });
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-
-        camera.position.z = 5;
-
-        // Animation Loop
-        function animate() {
-            requestAnimationFrame(animate);
-            particlesMesh.rotation.x += 0.001;
-            particlesMesh.rotation.y += 0.001;
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // Handle Window Resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        // Toggle dark mode
+        darkModeToggle.addEventListener('change', function() {
+            if (this.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
         });
 
-        // Scroll to Section Function
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navbar = document.getElementById('navbar');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navbar.classList.toggle('active');
+            this.innerHTML = navbar.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close banner functionality
+        document.getElementById('close-banner').addEventListener('click', function() {
+            document.getElementById('promo-banner').style.animation = 'fadeIn 0.5s ease-in-out reverse';
+            setTimeout(() => {
+                document.getElementById('promo-banner').style.display = 'none';
+                setCookie('bannerClosed', 'true', 7); // Remembers for 7 days
+            }, 500);
+        });
+
+        // Check if banner was previously closed
+        if (getCookie('bannerClosed') === 'true') {
+            document.getElementById('promo-banner').style.display = 'none';
         }
+
+        // Countdown timer (24 hours from now)
+        const countDownDate = new Date();
+        countDownDate.setHours(countDownDate.getHours() + 24);
+        
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }, 1000);
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Cookie functions
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+        
+        function getCookie(name) {
+            const cookieName = name + "=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookieArray = decodedCookie.split(';');
+            for(let i = 0; i < cookieArray.length; i++) {
+                let cookie = cookieArray[i];
+                while (cookie.charAt(0) == ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf(cookieName) == 0) {
+                    return cookie.substring(cookieName.length, cookie.length);
+                }
+            }
+            return "";
+        }
+
+        // Active nav link highlight
+        const navLinks = document.querySelectorAll('.navbar a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
     </script>
 </body>
 </html>

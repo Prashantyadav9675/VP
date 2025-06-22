@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSSC CET Group C Exam 2025 | Haryana Staff Selection Commission</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #e74c3c;
+            --accent: #2ecc71;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333;
+            --bg: #ffffff;
+            --card-bg: #ffffff;
+            --header-bg: #2c3e50;
+            --footer-bg: #2c3e50;
+            --table-header: #3498db;
+            --table-row: #f8f9fa;
+            --table-border: #e0e0e0;
+        }
+
+        .dark-mode {
+            --primary: #3498db;
+            --secondary: #e74c3c;
+            --accent: #2ecc71;
+            --light: #34495e;
+            --dark: #ecf0f1;
+            --text: #ecf0f1;
+            --bg: #2c3e50;
+            --card-bg: #34495e;
+            --header-bg: #1a252f;
+            --footer-bg: #1a252f;
+            --table-header: #3498db;
+            --table-row: #3d5166;
+            --table-border: #4a627a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--header-bg), #1a252f);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
+        .alert-banner {
+            background-color: var(--secondary);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .alert-banner .icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+
+        .alert-banner h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+            font-size: 1.3rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table th {
+            background-color: var(--table-header);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table td {
+            padding: 12px;
+            border: 1px solid var(--table-border);
+        }
+
+        table tr:nth-child(even) {
+            background-color: var(--table-row);
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        ul li, ol li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .badge-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .badge-warning {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        .btn-dark {
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .btn-dark:hover {
+            background-color: #1a252f;
+            transform: translateY(-2px);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--footer-bg);
+            color: white;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .toggle-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .toggle-btn i {
+            margin-right: 5px;
+        }
+
+        .ai-bot {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            
+            .header h2 {
+                font-size: 1.1rem;
+            }
+            
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="toggle-container">
+        <button class="toggle-btn" id="themeToggle">
+            <i class="fas fa-moon"></i> Dark Mode
+        </button>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1>Haryana Staff Selection Commission (HSSC)</h1>
+            <h2>CET Group C Examination 2025 | Advt No. 01/2025</h2>
+        </header>
+        
+        <div class="alert-banner">
+            <div class="icon">
+                <i class="fas fa-bullhorn"></i>
+            </div>
+            <div>
+                <h3>HSSC CET Group C Exam 2025 Notification Released</h3>
+                <p>Apply Online from 28/05/2025 to 12/06/2025</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-info-circle"></i> Overview</h3>
+            <p>Haryana Staff Selection Commission (HSSC) has released the Common Eligibility Test (CET) notification which will be necessary for upcoming Group C recruitments in Haryana. Candidates from Haryana or other states who wish to join Group C services can apply online from <strong>28 May 2025 to 12 June 2025</strong>.</p>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-calendar-alt"></i> Important Dates</h3>
+            <table>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>Application Begin</td>
+                    <td>28/05/2025</td>
+                </tr>
+                <tr>
+                    <td>Last Date for Apply Online</td>
+                    <td>12/06/2025</td>
+                </tr>
+                <tr>
+                    <td>Complete Form Last Date</td>
+                    <td>14/06/2025</td>
+                </tr>
+                <tr>
+                    <td>Exam Date</td>
+                    <td>As per Schedule</td>
+                </tr>
+                <tr>
+                    <td>Admit Card Available</td>
+                    <td>Before Exam</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-rupee-sign"></i> Application Fee</h3>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Fee</th>
+                </tr>
+                <tr>
+                    <td>Male Candidates (General/Other State)</td>
+                    <td>₹500/-</td>
+                </tr>
+                <tr>
+                    <td>Male Candidates (Haryana Reserve Category)</td>
+                    <td>₹250/-</td>
+                </tr>
+                <tr>
+                    <td>Female Candidates (General/EWS - Haryana)</td>
+                    <td>₹250/-</td>
+                </tr>
+                <tr>
+                    <td>Female Candidates (Haryana Reserve Category)</td>
+                    <td>₹250/-</td>
+                </tr>
+            </table>
+            <p style="margin-top: 10px;"><em>Payment Mode: Debit Card / Credit Card / Net Banking / UPI Only</em></p>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-user"></i> Eligibility Criteria</h3>
+            <h4 style="margin: 15px 0 10px 0; color: var(--primary);">Age Limit (as on 12/06/2025)</h4>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Age Range</th>
+                </tr>
+                <tr>
+                    <td>Minimum Age</td>
+                    <td>18 Years</td>
+                </tr>
+                <tr>
+                    <td>Maximum Age</td>
+                    <td>42 Years</td>
+                </tr>
+            </table>
+            <p style="margin-top: 10px;"><em>Age relaxation applicable as per HSSC Group C Recruitment Rules</em></p>
+            
+            <h4 style="margin: 20px 0 10px 0; color: var(--primary);">Educational Qualification</h4>
+            <ul>
+                <li>10+2 Intermediate Exam Passed from Any Recognized Board in India</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-file-signature"></i> How to Apply</h3>
+            <ol>
+                <li>Visit the official HSSC website</li>
+                <li>Read the complete notification carefully before applying</li>
+                <li>Prepare all required documents:
+                    <ul style="margin-top: 8px;">
+                        <li>Educational certificates</li>
+                        <li>ID proof</li>
+                        <li>Address proof</li>
+                        <li>Recent photograph (passport size)</li>
+                        <li>Signature scan</li>
+                    </ul>
+                </li>
+                <li>Fill the online application form carefully</li>
+                <li>Upload scanned documents as per specifications</li>
+                <li>Pay the application fee (if applicable)</li>
+                <li>Submit the form and take printout for future reference</li>
+            </ol>
+        </div>
+        
+        <div class="card">
+            <h3><i class="fas fa-link"></i> Important Links</h3>
+            <div class="links-grid">
+                <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i> Apply Online</a>
+                <a href="#" class="btn btn-success"><i class="fas fa-file-pdf"></i> Download Notification</a>
+                <a href="#" class="btn btn-dark"><i class="fas fa-book"></i> Download Syllabus</a>
+                <a href="#" class="btn btn-primary"><i class="fas fa-tools"></i> Sarkari Result Tools</a>
+                <a href="#" class="btn btn-success"><i class="fab fa-telegram"></i> Join Telegram</a>
+                <a href="#" class="btn btn-dark"><i class="fas fa-globe"></i> Official Website</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p><i class="fas fa-exclamation-circle"></i> For any queries, please visit the official HSSC website</p>
+            <p>© 2025 VP-GLOBAL | Last Updated: 29 May 2025</p>
+        </div>
+    </div>
+
+    <div class="ai-bot" title="AI Assistant">
+        <i class="fas fa-robot"></i>
+    </div>
+
+    <script>
+        // Dark mode toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+            updateButton(currentTheme);
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', '');
+                updateButton('');
+            } else {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+                updateButton('dark-mode');
+            }
+        });
+        
+        function updateButton(theme) {
+            if (theme === 'dark-mode') {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+            }
+        }
+        
+        // AI bot interaction (placeholder)
+        const aiBot = document.querySelector('.ai-bot');
+        aiBot.addEventListener('click', () => {
+            alert('AI Assistant: How can I help you with HSSC CET information?');
+        });
+    </script>
+</body>
+</html>
